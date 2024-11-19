@@ -1,0 +1,35 @@
+@model AppBooks.Models.Book
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<h1>Create a New Book</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Author" class="control-label"></label>
+        <input asp-for="Author" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category" class="control-label"></label>
+        <input asp-for="Category" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Summary" class="control-label"></label>
+        <textarea asp-for="Summary" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a href="@Url.Action("Index", "Books")">Back to Books List</a>
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Book Reviews!";
+}
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <p>Explore the available books and reviews.</p>
+
+    <!-- Enlaces de Login, Register, Reviews y Create New Book -->
+    <div>
+        <a href="@Url.Action("Login", "Account")">Login</a> |
+        <a href="@Url.Action("Register", "Account")">Register</a> |
+        <a href="@Url.Action("Index", "Reviews")">Reviews</a> |
+        <a href="@Url.Action("Create", "Books")">Create New Book</a>
+    </div>
+
+    <h3>Reviews</h3>
+    <p>No reviews available.</p>
+</div>

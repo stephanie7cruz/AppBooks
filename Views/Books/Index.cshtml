@@ -1,0 +1,38 @@
+@model IEnumerable<AppBooks.Models.Book>
+
+@{
+    ViewData["Title"] = "Books Index";
+}
+
+<h1>Books</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Book</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Author)</th>
+            <th>@Html.DisplayNameFor(model => model.Category)</th>
+            <th>@Html.DisplayNameFor(model => model.Summary)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => book.Title)</td>
+                <td>@Html.DisplayFor(modelItem => book.Author)</td>
+                <td>@Html.DisplayFor(modelItem => book.Category)</td>
+                <td>@Html.DisplayFor(modelItem => book.Summary)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@book.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@book.Id" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
